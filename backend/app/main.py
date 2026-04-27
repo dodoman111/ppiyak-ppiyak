@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import List
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -22,7 +20,7 @@ app.add_middleware(
 
 
 class RecommendRequest(BaseModel):
-    symptoms: List[str] = Field(
+    symptoms: list[str] = Field(
         default_factory=list,
         description="사용자가 선택한 증상 목록",
     )
@@ -42,8 +40,8 @@ class ProductOut(BaseModel):
 
 
 class RecommendResponse(BaseModel):
-    nutrients: List[NutrientOut]
-    products: List[ProductOut]
+    nutrients: list[NutrientOut]
+    products: list[ProductOut]
 
 
 @app.get("/health")

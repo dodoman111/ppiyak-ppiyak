@@ -5,7 +5,7 @@ MVP 단계에서는 DB 없이 코드 내 상수로 관리한다.
 
 from __future__ import annotations
 
-from typing import Dict, List, TypedDict
+from typing import TypedDict
 
 
 class Product(TypedDict):
@@ -15,7 +15,7 @@ class Product(TypedDict):
     link: str
 
 
-SYMPTOM_TO_NUTRIENT: Dict[str, List[str]] = {
+SYMPTOM_TO_NUTRIENT: dict[str, list[str]] = {
     "피로": ["비타민B", "마그네슘", "코엔자임Q10"],
     "눈건강": ["루테인", "오메가3"],
     "면역력": ["비타민C", "아연", "프로폴리스"],
@@ -27,7 +27,7 @@ SYMPTOM_TO_NUTRIENT: Dict[str, List[str]] = {
 }
 
 
-NUTRIENT_DESCRIPTION: Dict[str, str] = {
+NUTRIENT_DESCRIPTION: dict[str, str] = {
     "비타민B": "에너지 대사를 도와 피로 회복에 핵심적인 역할을 합니다.",
     "마그네슘": "근육 이완과 신경 안정에 도움을 주어 수면과 피로 개선에 기여합니다.",
     "코엔자임Q10": "세포 에너지 생성을 촉진하고 항산화 작용을 합니다.",
@@ -44,7 +44,7 @@ NUTRIENT_DESCRIPTION: Dict[str, str] = {
 }
 
 
-PRODUCTS: Dict[str, List[Product]] = {
+PRODUCTS: dict[str, list[Product]] = {
     "비타민B": [
         {
             "name": "고려은단 비타민B 컴플렉스",

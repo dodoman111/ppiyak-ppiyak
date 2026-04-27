@@ -92,13 +92,20 @@ vercel --prod      # 프로덕션 도메인으로 배포
 
 `backend/`에는 동일 로직의 FastAPI 구현이 남아 있습니다. Python 환경에서 실험/테스트가 필요할 때만 사용하세요.
 
+패키지 매니저는 [uv](https://docs.astral.sh/uv/), 린트/포맷은 [ruff](https://docs.astral.sh/ruff/)를 씁니다.
+
 ```bash
+brew install uv          # 처음 한 번만
 cd backend
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python -m pytest -q                           # 테스트
-.venv/bin/python -m uvicorn app.main:app --reload       # 로컬 서버
+uv sync                  # .venv 생성 + 의존성 설치 (requirements.txt 대체)
+
+uv run pytest                                # 테스트
+uv run uvicorn app.main:app --reload         # 로컬 서버
+uv run ruff format .                         # 포맷
+uv run ruff check --fix .                    # 린트 + 자동 수정
 ```
+
+> 의존성을 추가하려면 `uv add <pkg>` (런타임) 또는 `uv add --dev <pkg>` (개발용).
 
 ---
 
