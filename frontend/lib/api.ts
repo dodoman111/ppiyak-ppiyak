@@ -1,6 +1,13 @@
+export type Timing = {
+  slot: string;
+  emoji: string;
+  reason: string;
+};
+
 export type Nutrient = {
   name: string;
   description: string;
+  timing: Timing | null;
 };
 
 export type Product = {
@@ -11,9 +18,17 @@ export type Product = {
   nutrient: string;
 };
 
+export type PairInsight = {
+  a: string;
+  b: string;
+  reason: string;
+};
+
 export type RecommendResponse = {
   nutrients: Nutrient[];
   products: Product[];
+  synergies: PairInsight[];
+  conflicts: PairInsight[];
 };
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "";

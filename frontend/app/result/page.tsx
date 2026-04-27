@@ -6,6 +6,7 @@ import Link from "next/link";
 import {
   recommend,
   type Nutrient,
+  type PairInsight,
   type Product,
   type RecommendResponse,
 } from "@/lib/api";
@@ -37,7 +38,7 @@ function ResultBody({ symptoms }: { symptoms: string[] }) {
       <div className="rounded-2xl bg-red-50 px-4 py-6 text-center text-sm text-red-600">
         {error}
         <p className="mt-2 text-xs text-red-400">
-          백엔드 서버가 실행 중인지 확인해주세요. (기본 http://localhost:8000)
+          잠시 후 다시 시도해주세요.
         </p>
       </div>
     );
@@ -74,14 +75,74 @@ function ResultBody({ symptoms }: { symptoms: string[] }) {
               key={n.name}
               className="rounded-2xl border border-slate-200 bg-white p-4"
             >
-              <p className="text-base font-semibold text-brand-700">{n.name}</p>
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-base font-semibold text-brand-700">
+                  {n.name}
+                </p>
+                {n.timing && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 px-2 py-0.5 text-[11px] font-semibold text-brand-700">
+                    <span aria-hidden>{n.timing.emoji}</span> {n.timing.slot}
+                  </span>
+                )}
+              </div>
               <p className="mt-1 text-sm leading-relaxed text-slate-600">
                 {n.description}
               </p>
+              {n.timing && (
+                <p className="mt-2 text-xs text-slate-500">
+                  💡 {n.timing.reason}
+                </p>
+              )}
             </li>
           ))}
         </ul>
       </section>
+
+      {data.synergies.length > 0 && (
+        <section className="mt-8 space-y-3">
+          <h3 className="text-lg font-bold text-slate-900">
+            🤝 함께 먹으면 좋아요
+          </h3>
+          <ul className="space-y-2">
+            {data.synergies.map((s: PairInsight) => (
+              <li
+                key={`${s.a}-${s.b}`}
+                className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4"
+              >
+                <p className="text-sm font-semibold text-emerald-800">
+                  {s.a} <span className="text-emerald-500">＋</span> {s.b}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-emerald-900/80">
+                  {s.reason}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {data.conflicts.length > 0 && (
+        <section className="mt-8 space-y-3">
+          <h3 className="text-lg font-bold text-slate-900">
+            ⚠️ 시간 간격을 두세요
+          </h3>
+          <ul className="space-y-2">
+            {data.conflicts.map((c: PairInsight) => (
+              <li
+                key={`${c.a}-${c.b}`}
+                className="rounded-2xl border border-orange-200 bg-orange-50 p-4"
+              >
+                <p className="text-sm font-semibold text-orange-800">
+                  {c.a} <span className="text-orange-500">↔</span> {c.b}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-orange-900/80">
+                  {c.reason}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="mt-8 space-y-3">
         <h3 className="text-lg font-bold text-slate-900">🛒 추천 제품</h3>

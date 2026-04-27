@@ -33,6 +33,70 @@ export const NUTRIENT_DESCRIPTION: Record<string, string> = {
   식이섬유: "장 운동을 도와 규칙적인 배변에 기여합니다.",
 };
 
+export type Timing = {
+  slot: string;
+  emoji: string;
+  reason: string;
+};
+
+export const NUTRIENT_TIMING: Record<string, Timing> = {
+  비타민B: { slot: "아침", emoji: "🌅", reason: "에너지 대사 활성화 — 하루 시작에" },
+  비타민C: { slot: "아침 식후", emoji: "🍳", reason: "수용성, 위 부담 줄이려 식후 권장" },
+  코엔자임Q10: { slot: "식사와 함께", emoji: "🥗", reason: "지용성 — 지방과 함께 흡수↑" },
+  루테인: { slot: "식사와 함께", emoji: "🥗", reason: "지용성 — 지방과 함께 흡수↑" },
+  오메가3: { slot: "식사와 함께", emoji: "🥗", reason: "지용성 — 식사 중 흡수율 ↑" },
+  아연: { slot: "식간/언제든", emoji: "⏰", reason: "공복 권장, 위 자극 시 식후도 OK" },
+  프로폴리스: { slot: "아침 공복", emoji: "🌅", reason: "공복 흡수율 좋음" },
+  테아닌: { slot: "취침 전", emoji: "🌙", reason: "긴장 완화 → 잠들기 도움" },
+  마그네슘: { slot: "취침 전", emoji: "🌙", reason: "근육 이완 + 수면 질 개선" },
+  MSM: { slot: "식사와 함께", emoji: "🥗", reason: "위 부담 ↓" },
+  글루코사민: { slot: "식사와 함께", emoji: "🥗", reason: "위 부담 ↓" },
+  프로바이오틱스: {
+    slot: "아침 공복",
+    emoji: "🌅",
+    reason: "위산 노출 ↓ → 유익균 생존율 ↑",
+  },
+  식이섬유: {
+    slot: "식간/언제든",
+    emoji: "⏰",
+    reason: "충분한 물과 함께, 식간이 무난",
+  },
+};
+
+export type SynergyEntry = { pair: [string, string]; reason: string };
+
+export const NUTRIENT_SYNERGIES: SynergyEntry[] = [
+  {
+    pair: ["비타민C", "아연"],
+    reason: "면역 시스템에 함께 작용 — 환절기에 강력한 콤비",
+  },
+  {
+    pair: ["오메가3", "코엔자임Q10"],
+    reason: "심혈관 보호 + 세포 에너지 생성을 동시에",
+  },
+  {
+    pair: ["프로바이오틱스", "식이섬유"],
+    reason: "유익균 + 먹이 = 장 건강 시너지 (식이섬유는 prebiotic)",
+  },
+  {
+    pair: ["비타민B", "마그네슘"],
+    reason: "에너지 대사를 함께 도와 피로 회복에 효과적",
+  },
+];
+
+export type ConflictEntry = { pair: [string, string]; reason: string };
+
+export const NUTRIENT_CONFLICTS: ConflictEntry[] = [
+  {
+    pair: ["식이섬유", "마그네슘"],
+    reason: "식이섬유가 미네랄 흡수를 늦출 수 있어요. 2시간 간격 권장",
+  },
+  {
+    pair: ["식이섬유", "아연"],
+    reason: "식이섬유가 미네랄 흡수를 늦출 수 있어요. 2시간 간격 권장",
+  },
+];
+
 export const PRODUCTS: Record<string, Product[]> = {
   비타민B: [
     {
