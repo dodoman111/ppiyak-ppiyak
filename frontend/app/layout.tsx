@@ -23,6 +23,16 @@ export default function RootLayout({
       <body>
         <div className="mx-auto flex min-h-screen w-full max-w-screen-sm flex-col bg-white shadow-sm">
           {children}
+          <footer className="mt-auto border-t border-slate-100 px-6 py-5 text-[11px] leading-relaxed text-slate-400">
+            <p>
+              본 페이지의 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른
+              일정액의 수수료를 제공받습니다.
+            </p>
+            <p className="mt-1">
+              영양제 정보는 의료 행위가 아닌 일반적인 정보 제공 목적이며,
+              질환의 진단·치료를 대체하지 않습니다.
+            </p>
+          </footer>
         </div>
       </body>
     </html>
