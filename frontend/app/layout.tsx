@@ -1,10 +1,30 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
+const SITE_URL = "https://ppiyak-ppiyak.vercel.app";
+const SITE_TITLE = "삐약삐약 — 오늘도 무럭무럭";
+const SITE_DESC =
+  "오늘 내 컨디션에 딱 맞는 영양제를 삐약이가 골라드려요. 증상만 고르면 끝!";
+
 export const metadata: Metadata = {
-  title: "삐약삐약 — 오늘도 무럭무럭",
-  description:
-    "오늘 내 컨디션에 딱 맞는 영양제를 삐약이가 골라드려요. 증상만 고르면 끝!",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESC,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    url: SITE_URL,
+    siteName: "삐약삐약",
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESC,
+  },
 };
 
 export const viewport: Viewport = {
@@ -34,6 +54,8 @@ export default function RootLayout({
             </p>
           </footer>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
