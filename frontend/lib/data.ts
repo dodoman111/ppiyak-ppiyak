@@ -103,7 +103,7 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "고려은단 비타민B 컴플렉스",
       brand: "고려은단",
       price: 18000,
-      link: "https://www.coupang.com/np/search?q=%EA%B3%A0%EB%A0%A4%EC%9D%80%EB%8B%A8+%EB%B9%84%ED%83%80%EB%AF%BCB",
+      link: "https://link.coupang.com/a/exIbhb",
     },
     {
       name: "나우푸드 B-50",
@@ -123,7 +123,7 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "GNC 마그네슘 400",
       brand: "GNC",
       price: 19000,
-      link: "https://www.coupang.com/np/search?q=GNC+%EB%A7%88%EA%B7%B8%EB%84%A4%EC%8A%98",
+      link: "https://link.coupang.com/a/exIc2b",
     },
   ],
   코엔자임Q10: [
@@ -139,13 +139,13 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "종근당건강 아이클리어 루테인",
       brand: "종근당건강",
       price: 15000,
-      link: "https://www.coupang.com/np/search?q=%EC%A2%85%EA%B7%BC%EB%8B%B9+%EB%A3%A8%ED%85%8C%EC%9D%B8",
+      link: "https://link.coupang.com/a/exIdqt",
     },
     {
       name: "안국건강 루테인 지아잔틴",
       brand: "안국건강",
-      price: 17500,
-      link: "https://www.coupang.com/np/search?q=%EC%95%88%EA%B5%AD+%EB%A3%A8%ED%85%8C%EC%9D%B8",
+      price: 21500,
+      link: "https://link.coupang.com/a/exIdB7",
     },
   ],
   오메가3: [
@@ -159,15 +159,15 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "GNC 트리플 스트렝스 오메가3",
       brand: "GNC",
       price: 32000,
-      link: "https://www.coupang.com/np/search?q=GNC+%EC%98%A4%EB%A9%94%EA%B0%803",
+      link: "https://link.coupang.com/a/exIdRe",
     },
   ],
   비타민C: [
     {
       name: "고려은단 비타민C 1000",
       brand: "고려은단",
-      price: 12000,
-      link: "https://www.coupang.com/np/search?q=%EA%B3%A0%EB%A0%A4%EC%9D%80%EB%8B%A8+%EB%B9%84%ED%83%80%EB%AF%BCC",
+      price: 18000,
+      link: "https://link.coupang.com/a/exIebe",
     },
     {
       name: "캘리포니아골드 비타민C 1000mg",
@@ -188,7 +188,7 @@ export const PRODUCTS: Record<string, Product[]> = {
     {
       name: "뉴질랜드 프로폴리스 스프레이",
       brand: "Comvita",
-      price: 25000,
+      price: 17000,
       link: "https://www.coupang.com/np/search?q=%ED%94%84%EB%A1%9C%ED%8F%B4%EB%A6%AC%EC%8A%A4",
     },
   ],
@@ -212,8 +212,8 @@ export const PRODUCTS: Record<string, Product[]> = {
     {
       name: "GNC 트리플플렉스 글루코사민",
       brand: "GNC",
-      price: 34000,
-      link: "https://www.coupang.com/np/search?q=%EA%B8%80%EB%A3%A8%EC%BD%94%EC%82%AC%EB%AF%BC",
+      price: 23000,
+      link: "https://link.coupang.com/a/exIePV",
     },
   ],
   프로바이오틱스: [
@@ -221,7 +221,7 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "락토핏 생유산균 골드",
       brand: "종근당건강",
       price: 22000,
-      link: "https://www.coupang.com/np/search?q=%EB%9D%BD%ED%86%A0%ED%95%8F",
+      link: "https://link.coupang.com/a/exIe6w",
     },
     {
       name: "캘리포니아골드 LactoBif 30B",
