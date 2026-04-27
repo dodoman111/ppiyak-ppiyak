@@ -189,7 +189,7 @@ export const PRODUCTS: Record<string, Product[]> = {
       name: "뉴질랜드 프로폴리스 스프레이",
       brand: "Comvita",
       price: 17000,
-      link: "https://www.coupang.com/np/search?q=%ED%94%84%EB%A1%9C%ED%8F%B4%EB%A6%AC%EC%8A%A4",
+      link: "https://link.coupang.com/a/exIhrt",
     },
   ],
   테아닌: [
